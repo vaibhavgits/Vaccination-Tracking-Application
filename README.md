@@ -1,6 +1,8 @@
 # Vaccination-Tracking-Application
 This project is a web application built using SpringBoot, Thymeleaf, and Bootstrap to track the COVID-19 vaccination progress in India. The application uses a live and updated daily CSV file provided by Our World in Data that contains vaccination data for all countries, including India.
 
+![Vaccination-Tracking-Application](Vaccination_Tracker_Application.png)
+
 ## Usage
 To use this application, simply clone the repository and run it on your local machine. The application uses Maven as the build tool and can be run using the following command in the root directory of the project:
 
