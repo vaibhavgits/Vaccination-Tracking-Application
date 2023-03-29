@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Vaccination Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body class="bg-light bg-gradient">
+<div class="container">
+	<h1 class="text-center font-weight-bold display-3">Vaccination Tracker Application</h1>
+	<p class="text-center lead" >This application lists the current number of vaccines administered by India</p>
+
+	<div class="jumbotron bg-primary text-white">
+	    <h1 class="display-4 font-weight-bold" th:text="${totalAdministeredVaccines}"></h1>
+	    <p class="lead">Total vaccines administered as of today</p>
+	    <hr class="my-4">
+	    <p>
+	        <span>New vaccines administered since previous day:</span>
+	        <span th:text="${totalNewVaccinesAdministered}"></span>
+	    </p>
+	
+	</div>
+
+    <table class="table bg-light">
+        <tr>
+            <th>Date</th>
+            <th>Vaccines</th>
+            <th>Total Vaccines Administered</th>
+            <th>Changes Since Last Day</th>
+        </tr>
+        <tr th:each="locationStat : ${locationStats}">
+			<td th:text="${locationStat.date}"></td>
+            <td th:text="${locationStat.vaccine}"></td>
+            <td th:text="${locationStat.latestTotalVaccinated}">0</td>
+            <td th:text="${locationStat.diffFromPrevDay}">0</td>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>
